@@ -45,7 +45,7 @@ const createTask = async (req, res) => {
 const getAllTasks = async (req, res) => {
     try {
         const tasks = await TaskModel.find()
-            .populate({ path: 'customerName', select: "-__v -email -_id" })
+            .populate({ path: 'customerName', select: "-__v -email" })
             .populate({ path: "fieldExecutiveName", select: '-__v -password -createdAt -updatedAt -email -_id' })
             .populate({ path: 'lookingFor', select: '-__v -_id' })
             .populate({ path: 'visitePurpose', select: '-lookingFor -__v -_id' });

@@ -1,40 +1,44 @@
 const mongoose = require("mongoose");
 
-const venderSchema = new mongoose.Schema({
+const venderSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: [true, "Name is required"],
+      type: String,
+      required: [true, "Name is required"],
     },
     feuid: {
-        type: String
+      type: String,
     },
     email: {
-        type: String,
-        required: [true, "Email is required"],
+      type: String,
+      required: [true, "Email is required"],
     },
     phoneNumber: {
-        type: String,
-        required: [true, "Phone number is required"],
+      type: String,
+      required: [true, "Phone number is required"],
     },
     whatsappNumber: {
-        type: String,
-        required: [true, "WhatsApp number is required"],
+      type: String,
+      required: [true, "WhatsApp number is required"],
     },
     address: {
-        type: String,
-        required: [true, "Address is required"],
+      type: String,
+      required: [true, "Address is required"],
     },
     password: {
-        type: String,
-        required: [true, "Password is required"],
+      type: String,
+      required: [true, "Password is required"],
     },
-    role:{
-        type:String,
-        default:"Field Excutive"
-    }
-}, {
-    timestamps: true
-});
+    role: {
+      type: String,
+      default: "Field Excutive",
+      enum: ["Field Excutive", "Admin"],
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const VenderModel = mongoose.model("Vender", venderSchema);
 

@@ -1,9 +1,10 @@
-const { createVender, getAllVenders, getVenderById, updateVender, deleteVender, login } = require("../Controller/VenderController")
+const { createVender, getAllVenders, getVenderById, updateVender, deleteVender, login, getVenderAdmin } = require("../Controller/VenderController")
 
 const VenderRouter = require("express").Router()
 
 VenderRouter.post("/create-new-FieldExecutive", createVender)
 VenderRouter.get("/get-FieldExecutive", getAllVenders)
+VenderRouter.get("/get-FieldExecutiveAdmin", getVenderAdmin)
 VenderRouter.get("/get-single-FieldExecutive/:id", getVenderById)
 VenderRouter.put("/update-FieldExecutive/:id", updateVender)
 VenderRouter.delete("/delete-FieldExecutive/:id", deleteVender)

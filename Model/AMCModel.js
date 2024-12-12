@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const amcSchema = new mongoose.Schema({
+  billNo: {
+    type: String,
+  },
   type: {
     type: String,
     required: true,
@@ -29,6 +32,9 @@ const amcSchema = new mongoose.Schema({
   toDate: {
     type: String,
     required: true,
+  },
+  pdfPath: {
+    type: String,
   },
 });
 
